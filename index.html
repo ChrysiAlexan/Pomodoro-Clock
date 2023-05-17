@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--<link rel="icon" href="../../../../favicon.ico">-->
+    <title>JavaScript Calculator</title>
+
+
+    
+    <!--Template based on URL below-->
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/starter-template/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--My CSS-->
+
+    <style>
+      html {
+        font-size: 14px;
+    }
+
+    .container {
+        font-size: 14px;
+        color: #666666;
+        font-family: "Open Sans";
+    }
+    .btn-circle
+    {
+        width: 30px;
+        height: 30px;
+        border-radius: 35px;
+        font-size: 14px;
+        text-align: center;
+        margin-right: 25px;
+        margin-left: 25px;
+        margin-top: -100px;
+
+    }
+
+
+    .card-custom {
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(10, 10, 10, 0.3);
+  }
+
+  .sup-cards{
+    margin-left: 80px ;
+    margin-right: 80px;
+
+  }
+  .main-card{
+    height: 260px;
+    max-width: 320px;
+
+  }
+  .card-text{
+    font-size: 20px;
+  }
+</style>
+
+</head>
+
+<body>
+
+
+  <div class="container">
+
+<h1 class="text-center pt-5 m-auto" style="font-size:54px">25 + 5 Clock <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+  <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+</svg></h1>
+   
+
+<div class="row justify-content-center pt-5" style="margin-top: -20px;">
+  <div class=" col-lg-4 pb-3" style="margin-bottom: -100px;">
+
+    <div class="card mx-auto main-card my-4 text-center card-custom bg-white border-white border-0 rounded-circle">    
+      <div class="card-body" style="overflow-y: auto">
+        <h4 class="card-title" class="m-b-20" id="timer-label">Session</h4>
+        <p class="card-text"  class="card-text" id="time-left"  style="font-size: 70px;">25:00</p>
+    </div>
+    <div class="card-footer" style="background: inherit; border-color: inherit;">
+        <button class="btn btn-success" id="start_stop">Start/Stop</button>
+        <button class="btn btn-outline-danger" id="reset">Reset</button>
+    </div>
+</div>
+</div>
+</div>
+
+
+ <div class="row justify-content-center pt-5 m-auto">
+
+
+        <div class="card my-4 text-center card-custom bg-white border-white border-0 sup-cards">    
+          <div class="card-body" style="overflow-y: auto">
+            <h4 class="card-title" class="m-b-20" id="break-label">Break Length</h4>
+            <p class="card-text" class="text-center" id="break-length" class="card-text" >5</p>
+        </div>
+        <div class="card-footer" style="background: inherit; border-color: inherit;">
+          <button id="break-decrement" class="btn btn-warning  btn-circle btn-sm" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+</svg></button>
+          <button id="break-increment" class="btn btn-primary btn-circle btn-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+</svg></button>
+      </div>
+  </div>
+
+  <div class="card text-center my-4 card-custom bg-white border-white border-0 sup-cards">    
+      <div class="card-body " style="overflow-y: auto">
+        <h4 class="card-title" class="m-b-20" id="session-label">Session Length</h4>
+        <p class="card-text" id="session-length" class="card-text">25</p>
+    </div>
+    <div class="card-footer" style="background: inherit; border-color: inherit;">
+      <button id="session-decrement" class="btn btn-warning btn-circle btn-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1z"/>
+</svg></button>
+          <button id="session-increment" class="btn btn-primary btn-circle btn-sm"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-up" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+</svg></button>
+
+  </div>
+</div>
+</div>
+
+
+</div>
+
+<audio id="beep" src="beep/beep.wav"></audio>
+
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="25+5clock.js"></script>
+</body>
+</html>
